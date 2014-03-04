@@ -2,12 +2,12 @@ var S = require('kissy');
 
 // GET main
 exports.main = function(req, res){
-  res.render('main');
+  res.render('screen/main');
 };
 
 // GET register
 exports.register = function(req, res) {
-  res.render('register');
+  res.render('mobile/register');
 };
 
 exports.join = function(req, res) {
@@ -16,9 +16,9 @@ exports.join = function(req, res) {
   var user = S.trim(req.body.user);
   if ('' !== user) {
     users[user] = {name: user};
-    res.render('index', {name: user});
+    res.render('mobile/index', {name: user});
   } else {
-    res.render('register', {
+    res.render('mobile/register', {
       error: '用户名不能为空！'
     });
   }
