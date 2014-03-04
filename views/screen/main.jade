@@ -32,7 +32,11 @@ html
           socket = io.connect(['http://', ip, ':', port].join(''));
           socket.on('connection', function (data) {
             console.log('connected');
+            socket.emit('screen');
           });
+          socket.on('click', function(data){
+            console.log(data.totalClick);
+          })
         }
       });
 
