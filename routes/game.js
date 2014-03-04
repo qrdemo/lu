@@ -1,6 +1,11 @@
 var S = require('kissy');
 
-// GET
+// GET main
+exports.main = function(req, res){
+  res.render('game/main');
+};
+
+// GET register
 exports.register = function(req, res) {
   res.render('game/register');
 };
