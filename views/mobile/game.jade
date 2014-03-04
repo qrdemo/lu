@@ -16,6 +16,7 @@ html
     script.
       var url = ['http://', '#{env.ip}', ':', '#{env.port}'].join('');
       var msgbox = document.getElementById('message');
+      var btn = document.getElementById('btn');
       var socket = io.connect(url);
       socket.on('connection', function (data) {
         console.log('connected');
@@ -24,3 +25,7 @@ html
       socket.on('message', function(data){
         msgbox.innerHTML += data.msg;
       });
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        socket.emit('click', {name: '#{name}'});
+      }, false);
