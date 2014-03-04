@@ -1,4 +1,5 @@
 var S = require('kissy');
+var env = require('../lib/env');
 
 // GET main
 exports.main = function(req, res){
@@ -16,7 +17,7 @@ exports.join = function(req, res) {
   var user = S.trim(req.body.user);
   if ('' !== user) {
     users[user] = {name: user};
-    res.render('mobile/index', {name: user});
+    res.render('mobile/game', {name: user, env: env});
   } else {
     res.render('mobile/register', {
       error: '用户名不能为空！'

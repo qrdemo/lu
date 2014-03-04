@@ -32,7 +32,7 @@ require('./routes')(app);
 
 // socket binding
 var server = http.createServer(app);
-require('./lib/socket')(server, app);
+require('./lib/socket')(server);
 
 // start server
 server.listen(app.get('port'));
