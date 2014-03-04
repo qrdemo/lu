@@ -1,13 +1,20 @@
 doctype html
 html
   head
-    title
+    meta(charset="utf-8")
+    title 美女 Lu lu 
+    link(rel="stylesheet", href="http://g.tbcdn.cn/thx/cube/1.2.1/neat-min.css")
     link(rel="stylesheet", href="../css/base.css")
+    link(rel="stylesheet", href="../css/screen.css")
     script(type="text/javascript", src="../js/socket.io.min.js")
     script(type="text/javascript", src="../js/qrcode.min.js")
   body
-    canvas(id="qrcode")
-    input(id="btn", type="button", value="开始游戏")
+    main
+      canvas(id="qrcode")
+      div(class="game-box")
+        div(id="J_game_canvas" class="game-canvas")
+      div
+        input(id="btn", class="btn-submit" type="button", value="开始游戏")
     script.
       var qrcodedraw = new QRCodeLib.QRCodeDraw();
       var qrcode = document.getElementById('qrcode');

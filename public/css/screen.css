@@ -1,0 +1,21 @@
+main {
+    width: 990px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.game-box {
+    width: 200px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.game-main {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(220,19,33,.8);
+}
