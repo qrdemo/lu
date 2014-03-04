@@ -1,9 +1,15 @@
 doctype html
 html
   head
-    title= title
+    meta(charset="utf-8")
+    meta(name ="viewport",content ="initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui")
+    title 请输入大名
+    link(rel="stylesheet", href="http://g.tbcdn.cn/thx/cube/1.2.1/neat-min.css")
+    link(rel="stylesheet", href="../css/base.css")
+    link(rel="stylesheet", href="../css/mobile.css")
   body
-    form(method="post", action="/mobile")
-      label.请输入用户名：
-      input(type="text", name="user", placeholder="请输入用户名")
-      input(type="submit", value="提交")
+    .login-wrap
+      h2 Lu
+      form(method="post", action="/mobile")
+          input(type="text", name="user", placeholder="请输入大名")
+          input(type="submit", class="btn-submit" value="开始Lu")
