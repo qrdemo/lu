@@ -1,5 +1,6 @@
 var S = require('kissy');
 var env = require('../lib/env');
+var lu = require('../lib/lu');
 
 // GET main
 exports.main = function(req, res){
@@ -16,7 +17,7 @@ exports.join = function(req, res) {
   var users = app.get('users');
   var user = S.trim(req.body.user);
   if ('' !== user) {
-    users[user] = {name: user};
+    lu.addUser(user);
     res.render('mobile/game', {name: user, env: env});
   } else {
     res.render('mobile/register', {
