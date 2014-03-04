@@ -15,7 +15,9 @@ html {
     min-width: 300px;
     max-width: 500px;
     height: 220px;
+    -webkit-border-radius: 6px;
     border-radius: 6px;
+    -webkit-box-shadow: 3px 3px 10px rgba(51, 51, 51, 0.6);
     box-shadow: 3px 3px 10px rgba(51, 51, 51, 0.6);
     padding: 15px;
 }
@@ -52,6 +54,7 @@ html {
     font-size: 36px;
     color: #34495e;
     line-height: 1.2;
+    text-shadow: 1px 1px 0 rgba(155, 123, 105, 0.5);
 }
 
 .login-wrap form {
@@ -74,14 +77,4 @@ html {
 
 .login-wrap form input:focus {
     border: 1px solid #3498DB;
-}
-
- .login-wrap .btn-submit {
-    background: #3A7BDB;
-    border: none;
-    color: #FFF;
-    font-size: 18px;
-    letter-spacing: 2px;
-    -webkit-appearance: none;
-    appearance: none;
 }
