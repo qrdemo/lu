@@ -2,12 +2,12 @@ var S = require('kissy');
 
 // GET main
 exports.main = function(req, res){
-  res.render('game/main');
+  res.render('main');
 };
 
 // GET register
 exports.register = function(req, res) {
-  res.render('game/register');
+  res.render('register');
 };
 
 exports.join = function(req, res) {
@@ -16,9 +16,9 @@ exports.join = function(req, res) {
   var user = S.trim(req.body.user);
   if ('' !== user) {
     users[user] = {name: user};
-    res.render('game/index', {name: user});
+    res.render('index', {name: user});
   } else {
-    res.render('game/register', {
+    res.render('register', {
       error: '用户名不能为空！'
     });
   }
