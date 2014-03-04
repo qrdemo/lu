@@ -1,11 +1,17 @@
 doctype html
 html
   head
-    title
+    meta(charset="utf-8")
+    meta(name ="viewport",content ="initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui")
+    title lu 控制台
+    link(rel="stylesheet", href="http://g.tbcdn.cn/thx/cube/1.2.1/neat-min.css")
+    link(rel="stylesheet", href="../css/base.css")
+    link(rel="stylesheet", href="../css/mobile.css")
     script(type="text/javascript", src="../js/socket.io.min.js")
   body
     p|Welcome #{name}!
     input(type="hidden")
+    button(id="btn", class="btn-submit") 开始摸我
     div(id="message", style="width:200px;height:200px;border:1px solid black;")
     script.
       var url = ['http://', '#{env.ip}', ':', '#{env.port}'].join('');
