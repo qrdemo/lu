@@ -38,3 +38,6 @@ require('./lib/socket')(server, app);
 server.listen(app.get('port'));
 console.log('server is listening on ' + app.get('port'));
 
+// export `app`
+module.exports = app;
+
