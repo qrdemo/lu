@@ -1,8 +1,20 @@
 doctype html
 html
   head
-    title= title
-
+    title
+    script(type="text/javascript", src="../js/socket.io.min.js")
   body
     p|Welcome #{name}!
     input(type="hidden")
+    div(id="message", style="width:200px;height:200px;border:1px solid black;")
+    script.
+      var url = ['http://', '#{env.ip}', ':', '#{env.port}'].join('');
+      var msgbox = document.getElementById('message');
+      var socket = io.connect(url);
+      socket.on('connection', function (data) {
+        console.log('connected');
+        socket.emit('join', {name: '#{name}'});
+      });
+      socket.on('message', function(data){
+        msgbox.innerHTML += data.msg;
+      });
