@@ -13,8 +13,10 @@ html
       canvas(id="qrcode")
       div(class="game-box")
         div(id="J_game_canvas" class="game-canvas")
-        .progress-box
-          progress(value="60" max="100")
+      .progress-box
+        div(class="progress-value") 60%
+        .progress-bar
+          progress(id="" value="60" max="100")
       div
         input(id="btn", class="btn-submit" type="button", value="开始游戏")
     script.
