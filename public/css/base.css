@@ -14,17 +14,21 @@ body {
     font-size: 16px;
 }
 
-.btn-submit {
-    background: #3A7BDB;
+.btn-start {
+    background: #568AD8;
     border: none;
     color: #FFF !important;
     font-size: 18px;
     letter-spacing: 2px;
     padding: 0 12px;
-    height: 40px;
     border-radius: 5px;
     -webkit-appearance: none;
     appearance: none;
+}
+
+.btn-lagrge {
+    font-size: 32px;
+    padding: 22px 12px;
 }
 
 /**

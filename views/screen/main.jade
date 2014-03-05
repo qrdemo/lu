@@ -11,8 +11,11 @@ html
     script(type="text/javascript", src="../js/qrcode.min.js")
   body
     main
+      h1(class="title") 一起撸一撸
       div(class="game-box")
-        canvas(id="qrcode")
+        div.start-box
+          canvas(id="qrcode")
+          input(id="btn", class="btn-start" type="button", value="开始游戏")
         div(id="J_game_canvas" class="game-canvas")
             .lulu
                 .icon-body
@@ -23,11 +26,11 @@ html
                 <!-- 头发 -->
                 .icon-hair
                 <!-- 内衣 -->
-                .icon-underwear(style="color: rgba(148, 0, 83, 1);")
+                .icon-underwear
                 <!-- 上衣 -->
-                .icon-clothes(style="color: rgba(31, 27, 28, 1);")
+                .icon-clothes
                 <!-- 裤子 -->
-                .icon-pants(style="color: rgba(31, 27, 28, 1);")
+                .icon-pants
         .progress-box
           div(class="progress-value") 100%
           .progress-bar

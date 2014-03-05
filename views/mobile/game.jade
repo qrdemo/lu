@@ -3,7 +3,7 @@ html
   head
     meta(charset="utf-8")
     meta(name ="viewport",content ="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui")
-    title lu 控制台
+    title Lu主控制台
     link(rel="stylesheet", href="http://g.tbcdn.cn/thx/cube/1.2.1/neat-min.css")
     link(rel="stylesheet", href="../css/base.css")
     link(rel="stylesheet", href="../css/mobile.css")
@@ -21,10 +21,10 @@ html
       .begin(style= flag ? "display:block" : "display:none")
         header
           h3(class="user")
-            strong #{name}
-            小主，伦家是你的了
+            strong #{name} 
+            主人，伦家是你的了(^o^)
         input(type="hidden")
-        button(id="btn" class="btn-submit") 开始摸我
+        button(id="btn" class="btn-start btn-lagrge") 开始摸我
     script.
       var url = ['http://', '#{env.ip}', ':', '#{env.port}'].join('');
       var msgbox = document.getElementById('message');
