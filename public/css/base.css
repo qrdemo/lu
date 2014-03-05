@@ -27,3 +27,13 @@ body {
     appearance: none;
 }
 
+/**
+ * 修复 IE 移动端 300ms 延迟
+ */
+a[href], button, input {
+    -ms-touch-action: manipulation; /* IE10  */
+    touch-action: none; /* Chrome */
+    touch-action: manipulation;     /* IE11+ */
+} 
+
+

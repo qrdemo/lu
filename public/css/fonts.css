@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'lulu';
+    src: url('../fonts/lulu.eot'); /* IE9+ */
+    src: url('../fonts/lulu.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/lulu.woff') format('woff'), /* Chrome,Firefox */
+         url('../fonts/lulu.ttf') format('truetype'), /* Chrome,Firefox,Opera,Safari,Android, iOS 4.2+ */
+         url('../fonts/lulu.svg#lulu') format('svg'); /* iOS 4.1- */
+}
+
+
+.icon-lulu,
+[class^="icon-"]:before,
+[class*=" icon-"]:before,
+[class^="icon-"]:after,
+[class*=" icon-"]:after {
+    font-family: 'lulu';
+    line-height: 1;
+    font-size: 680px;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.lulu div{
+    position: absolute;
+    top: 0;
+}
+
+/* 内衣 */
+.icon-underwear:before {
+    content: "\e600";
+    color: #940053;
+}
+
+/* 上衣 */
+.icon-clothes:before {
+    content: "\e607";
+    color: #1F1B1C;
+}
+
+/* 裤子 */
+.icon-pants:before {
+    content: "\e601";
+    color: #1F1B1C;
+}
+
+/* 鼻子 */
+.icon-nose:before {
+    content: "\e602";
+    color: #DD9564;
+}
+
+/* 嘴唇 */
+.icon-hotdog:before {
+    content: "\e603";
+    color: #FF1542;
+}
+
+/* 头发 */
+.icon-hair:before {
+    content: "\e604";
+    color: #333533;
+}
+.icon-eye2:before {
+    content: "\e605";
+    color: #007F2F;
+}
+.icon-eye:before {
+    content: "\e606";
+    color: #fff;
+}
+
+.icon-body:before {
+    content: "\e608";
+    color: #FCCBA9;
+}
+.icon-belt:before {
+    content: "\e609";
+}

@@ -1,3 +1,8 @@
+
+html{
+    background: url(../img/bg.jpg) 50% 0% no-repeat;
+    background-size: cover; /* 等比缩放到完全覆盖容器，背景图像有可能超出容器 */
+}
 main {
     width: 990px;
     margin-left: auto;
@@ -6,14 +11,16 @@ main {
 }
 
 #qrcode {
-    position: fixed;
-    right: 90px;
-    top: 50px;
+    position: absolute;
+    z-index: 999;
+    right: 120px;
+    top: 40px;
 }
 
 .game-box {
+    position: relative;
     width: 600px;
-    height: 300px;
+    height: 600px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
@@ -24,11 +31,14 @@ main {
     height: 100%;
     width: 80%;
     margin: auto;
-    background-color: rgba(154, 154, 187, 0.8);
+    /*background-color: rgba(154, 154, 187, 0.8);*/
 }
 
 
-/* 进度条 */
+/* --------------------------------------------------------------------------
+   进度条
+   -------------------------------------------------------------------------- */
+
 .progress-bar {
     /*padding: 0 15px;*/
     display: inline-block;
@@ -50,34 +60,63 @@ main {
     border-radius: 18px;
 }
 .progress-bar progress::-webkit-progress-value {
-    background: #cdeb8e;
-    background: -moz-linear-gradient(top,  #cdeb8e 0%, #a5c956 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cdeb8e), color-stop(100%,#a5c956));
-    background: -webkit-linear-gradient(top,  #cdeb8e 0%,#a5c956 100%);
-    background: -o-linear-gradient(top,  #cdeb8e 0%,#a5c956 100%);
-    background: -ms-linear-gradient(top,  #cdeb8e 0%,#a5c956 100%);
-    background: linear-gradient(to bottom,  #cdeb8e 0%,#a5c956 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cdeb8e', endColorstr='#a5c956',GradientType=0 );
+    background: #D85757;
+    background: -moz-linear-gradient(top,  #D85757 0%, #CF2237 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#D85757), color-stop(100%,#CF2237));
+    background: -webkit-linear-gradient(top,  #D85757 0%,#CF2237 100%);
+    background: -o-linear-gradient(top,  #D85757 0%,#CF2237 100%);
+    background: -ms-linear-gradient(top,  #D85757 0%,#CF2237 100%);
+    background: linear-gradient(to bottom, #D85757 0%,#CF2237 100%);
     border-radius: 18px;
 }
 .progress-bar progress::-moz-progress-bar {
-    background: #cdeb8e;
-    background: -moz-linear-gradient(top,  #cdeb8e 0%, #a5c956 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cdeb8e), color-stop(100%,#a5c956));
-    background: -webkit-linear-gradient(top,  #cdeb8e 0%,#a5c956 100%);
-    background: -o-linear-gradient(top,  #cdeb8e 0%,#a5c956 100%);
-    background: -ms-linear-gradient(top,  #cdeb8e 0%,#a5c956 100%);
-    background: linear-gradient(to bottom,  #cdeb8e 0%,#a5c956 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cdeb8e', endColorstr='#a5c956',GradientType=0 );
+    background: #D85757;
+    background: -moz-linear-gradient(top,  #D85757 0%, #CF2237 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#D85757), color-stop(100%,#CF2237));
+    background: -webkit-linear-gradient(top,  #D85757 0%,#CF2237 100%);
+    background: -o-linear-gradient(top,  #D85757 0%,#CF2237 100%);
+    background: -ms-linear-gradient(top,  #D85757 0%,#CF2237 100%);
+    background: linear-gradient(to bottom,  #D85757 0%,#CF2237 100%);
     border-radius: 18px;
 }
 
 .progress-box {
     margin: 20px auto;
     text-align: center;
+    position: relative;
+    z-index: 9;
 }
 .progress-box .progress-value {
     padding: 0px 5px;
     color: #555;
     font-size: 32px;
+}
+
+/**
+ * 开始按钮
+ */
+ .start-box {
+     position: absolute;
+     bottom: 50px;
+     right: 10px;
+     z-index: 99;
+ }
+
+.btn-start {
+    border: 0 none;
+    background: #C91E63;
+    color: #fff;
+    padding: 16px 26px;
+    border-radius: 9px;
+    font-size: 32px;
+}
+
+/* --------------------------------------------------------------------------
+   lulu 美女
+   -------------------------------------------------------------------------- */
+.lulu {
+    height: 100%;
+    width: 100%;
+    text-indent: -220px;
+    /*background: url(../img/lulu-bg.png) 50% 0 no-repeat;*/
 }

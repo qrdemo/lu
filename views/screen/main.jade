@@ -5,20 +5,31 @@ html
     title 美女 Lu lu 
     link(rel="stylesheet", href="http://g.tbcdn.cn/thx/cube/1.2.1/neat-min.css")
     link(rel="stylesheet", href="../css/base.css")
+    link(rel="stylesheet", href="../css/fonts.css")
     link(rel="stylesheet", href="../css/screen.css")
     script(type="text/javascript", src="../js/socket.io.min.js")
     script(type="text/javascript", src="../js/qrcode.min.js")
   body
     main
-      canvas(id="qrcode")
       div(class="game-box")
+        canvas(id="qrcode")
         div(id="J_game_canvas" class="game-canvas")
-      .progress-box
-        div(class="progress-value") 60%
-        .progress-bar
-          progress(id="" value="60" max="100")
-      div
-        input(id="btn", class="btn-submit" type="button", value="开始游戏")
+            .lulu
+                .icon-body
+                .icon-eye
+                .icon-eye2
+                .icon-hair
+                .icon-nose
+                .icon-underwear
+                .icon-hotdog
+                .icon-clothes
+                .icon-pants
+        .progress-box
+          div(class="progress-value") 60%
+          .progress-bar
+            progress(id="" value="60" max="100")
+        div.start-box
+          input(id="btn", class="btn-start" type="button", value="开始游戏")    
     script.
       var qrcodedraw = new QRCodeLib.QRCodeDraw();
       var qrcode = document.getElementById('qrcode');
