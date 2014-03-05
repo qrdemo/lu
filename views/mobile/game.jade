@@ -9,10 +9,13 @@ html
     link(rel="stylesheet", href="../css/mobile.css")
     script(type="text/javascript", src="../js/socket.io.min.js")
   body
-    p|Welcome #{name}!
-    input(type="hidden")
-    button(id="btn", class="btn-submit") 开始摸我
-    div(id="message", style="width:200px;height:200px;border:1px solid black;")
+    main
+      h3(class="user")
+        strong #{name}
+        小主，伦家是你的了
+      input(type="hidden")
+      button(id="btn" class="btn-submit") 开始摸我
+      div(id="message")
     script.
       var url = ['http://', '#{env.ip}', ':', '#{env.port}'].join('');
       var msgbox = document.getElementById('message');
@@ -23,7 +26,7 @@ html
         socket.emit('join', {name: '#{name}'});
       });
       socket.on('message', function(data){
-        msgbox.innerHTML += data.msg;
+        msgbox.innerHTML += ("<p class='message-item'>" + data.msg + "</p>");
       });
       btn.addEventListener('click', function(e){
         e.stopPropagation();

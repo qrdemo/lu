@@ -7,6 +7,37 @@ html {
     background-size: cover;
 }
 
+.user {
+    color: #555;
+}
+
+.user strong {
+    font-weight: normal;
+    color: #5C208B;
+}
+
+main {
+    padding: 10px 20px;
+    text-align: center;
+}
+
+#btn {
+    width: 100%;
+    padding: 12px 0;
+    height: auto;
+}
+
+#message {
+    width:200px;
+    height:200px;
+    margin: 20px auto;
+    border: 1px solid rgba(56, 121, 31, 0.5);
+    border-radius: 4px;
+    color: #CF5B36;
+    text-shadow: 1px 1px 0 rgba(250, 255, 250, 0.6);
+    box-shadow: 3px 3px 10px rgba(75, 102, 139, 0.5);
+}
+
 .login-wrap {
     position: relative;
     margin: 20px auto 0;
