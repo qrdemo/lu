@@ -11,10 +11,10 @@ main {
 }
 
 #qrcode {
-    position: absolute;
-    z-index: 999;
-    right: 120px;
-    top: 40px;
+    display: block;
+    width: 230px;
+    border-radius: 9px;
+    margin-bottom: 5px;
 }
 
 .game-box {
@@ -96,10 +96,10 @@ main {
  * 开始按钮
  */
  .start-box {
-     position: absolute;
-     bottom: 50px;
-     right: 10px;
-     z-index: 99;
+    position: absolute;
+    top: -15px;
+    right: 55px;
+    z-index: 99;
  }
 
 .btn-start {

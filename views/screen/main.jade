@@ -12,7 +12,9 @@ html
   body
     main
       div(class="game-box")
-        canvas(id="qrcode")
+        div.start-box  
+          canvas(id="qrcode")
+          input(id="btn", class="btn-start" type="button", value="开始游戏") 
         div(id="J_game_canvas" class="game-canvas")
             .lulu
                 .icon-body
@@ -23,17 +25,15 @@ html
                 <!-- 头发 -->
                 .icon-hair
                 <!-- 内衣 -->
-                .icon-underwear(style="color: rgb(148, 0, 83);")
+                .icon-underwear(style="color: rgba(148, 0, 83, 1);")
                 <!-- 上衣 -->
-                .icon-clothes(style="color: rgb(31, 27, 28, 1);")
+                .icon-clothes(style="color: rgba(31, 27, 28, 1);")
                 <!-- 裤子 -->
-                .icon-pants(style="color: rgb(31, 27, 28, 1);")
+                .icon-pants(style="color: rgba(31, 27, 28, 1);")
         .progress-box
           div(class="progress-value") 60%
           .progress-bar
-            progress(id="" value="60" max="100")
-        div.start-box
-          input(id="btn", class="btn-start" type="button", value="开始游戏")    
+            progress(id="" value="60" max="100")   
     script.
       var qrcodedraw = new QRCodeLib.QRCodeDraw();
       var qrcode = document.getElementById('qrcode');
