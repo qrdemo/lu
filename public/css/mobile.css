@@ -10,10 +10,13 @@ html {
 strong {
     font-weight: normal;
     color: #7190C7;
+    width: -webkit-calc(100%-30px);
+    width: -moz-calc(100%-30px);
+    width: calc(100%-30px);
 }
 
 header {
-    border-bottom: 1px solid #B4926C;
+    border-bottom: 1px solid #B1906B;
     margin-bottom: 20px;
 }
 
@@ -42,9 +45,11 @@ main {
     padding: .5em 1em;
     text-align: left;
     border: 1px solid rgba(56, 121, 31, 0.5);
+    -webkit-border-radius: 4px;
     border-radius: 4px;
     color: #FFF8F5;
     text-shadow: 0 -1px 0 rgba(100, 40, 11, 0.36);
+    -webkit-box-shadow: 3px 3px 10px rgba(75, 102, 139, 0.5);
     box-shadow: 3px 3px 10px rgba(75, 102, 139, 0.5);
 }
 
@@ -115,7 +120,9 @@ main {
 .form-tips {
     position: absolute;
     top: -2em;
-    color: #DD5B58;
+    left: 2em;
+    color: #B13131;
+    text-shadow: 0 1px 0 rgba(235, 195, 195, 0.5);
     display: none;
 }
 
