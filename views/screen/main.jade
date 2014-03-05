@@ -2,7 +2,7 @@ doctype html
 html
   head
     meta(charset="utf-8")
-    title 美女 Lu lu 
+    title 美女 Lu lu
     link(rel="stylesheet", href="http://g.tbcdn.cn/thx/cube/1.2.1/neat-min.css")
     link(rel="stylesheet", href="../css/base.css")
     link(rel="stylesheet", href="../css/fonts.css")
@@ -25,14 +25,17 @@ html
                 .icon-clothes
                 .icon-pants
         .progress-box
-          div(class="progress-value") 60%
+          div(class="progress-value") 100%
           .progress-bar
-            progress(id="" value="60" max="100")
+            progress(id="progress" value="200" max="200")
         div.start-box
-          input(id="btn", class="btn-start" type="button", value="开始游戏")    
+          input(id="btn", class="btn-start" type="button", value="开始游戏")
     script.
       var qrcodedraw = new QRCodeLib.QRCodeDraw();
       var qrcode = document.getElementById('qrcode');
+      var progress = document.getElementById('progress');
+      var progress_val = document.querySelector('.progress-value');
+      var max = progress.value;
       var ip = '#{ip}';
       var port = '#{port}';
       var game = ['http://', ip, ':', port, '/mobile'].join('');
@@ -48,7 +51,8 @@ html
             socket.emit('screen');
           });
           socket.on('click', function(data){
-            console.log(data.totalClick);
+            progress.value = --progress.value;
+            progress_val.innerHTML = Math.ceil(progress.value / 2) + '%';
           })
         }
       });
