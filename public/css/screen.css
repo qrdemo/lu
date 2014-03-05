@@ -161,6 +161,7 @@ main .title {
     color: #991d00;
     line-height: 1.1;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 .dialog .error p {
@@ -171,7 +172,7 @@ main .title {
 
 .rank {
     text-align: left;
-    margin-top: 130px;
+    margin-top: 150px;
     border-bottom: 3px solid #755E5E;
 }
 
@@ -195,7 +196,7 @@ main .title {
     -webkit-order: 2;
     -ms-flex-order: 2;
     order: 2;
-    height: 120px;
+    height: 130px;
 }
 
 .rank .rank-list:nth-child(2) {
