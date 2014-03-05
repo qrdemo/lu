@@ -12,6 +12,10 @@ html
   body
     main
       h1(class="title") 一起撸一撸
+      .progress-box
+        .progress-bar
+          progress(id="progress" value="200" max="200")
+        div(class="progress-value") 100%  
       div(class="game-box")
         div.start-box
           canvas(id="qrcode")
@@ -31,13 +35,10 @@ html
                 .icon-clothes
                 <!-- 裤子 -->
                 .icon-pants
-        .progress-box
-          div(class="progress-value") 100%
-          .progress-bar
-            progress(id="progress" value="200" max="200")
+
         div.start-box
     .dialog.over(style="display:none")
-        h3 GAME OVER
+        h3 Game Over
         .error
            p 服务器出现了一个故障!
            <button id="lu-btn" class="btn">谁撸的最快？</button>
