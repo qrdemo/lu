@@ -228,7 +228,7 @@ main .title {
 
 
 .rank .bd {
-    margin-top: -100px;
+    margin-top: -130px;
     font-size: 22px;
     color: #962532;
 }
@@ -246,9 +246,13 @@ main .title {
 
 .rank .rank-list:nth-child(1) .num {
     font-size: 60px;
-    margin-top: 10px;
+    margin-top: 40px;
+}
+
+.rank .rank-list:nth-child(2) .num {
+    margin-top: 25px;
 }
 
 .rank .rank-list:nth-child(3) .num  {
-    margin-top: -15px;
+    margin-top: 15px;
 }
