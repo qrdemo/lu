@@ -36,17 +36,17 @@ html
           .progress-bar
             progress(id="progress" value="200" max="200")
         div.start-box
-    .dialog.over
+    .dialog.over(style="display:none")
         h3 GAME OVER
         .error
            p 服务器出现了一个故障!
-           <button class="btn">谁撸的最快？</button>
-        .rank
+           <button id="lu-btn" class="btn">谁撸的最快？</button>
+        .rank(style="display:none;")
            ol(class="rank-list")
-              li 
+              li
                 span 撸手王子：桑老师
-              li 
-                span 最快撸手：苍老师  
+              li
+                span 最快撸手：苍老师
     script.
       var qrcodedraw = new QRCodeLib.QRCodeDraw();
       var qrcode = document.querySelector('#qrcode');
@@ -60,6 +60,13 @@ html
       var port = '#{port}';
       var game = ['http://', ip, ':', port, '/mobile'].join('');
       var socket;
+      var gameover = false;
+      var dialog = document.querySelector('.dialog');
+      var rank = document.querySelector('.rank');
+      var error = document.querySelector('.error');
+      var list = document.querySelector('.rank-list');
+      var lu_btn = document.querySelector('#lu-btn');
+      var btn = document.getElementById('btn');
 
       qrcodedraw.draw(qrcode, game, function(err, canvas){
         if(err){
@@ -71,51 +78,73 @@ html
             socket.emit('screen');
           });
           socket.on('click', function(data){
+            if (progress.value == 0) {
+              socket.emit('game over');
+              return;
+            }
             progress.value = --progress.value;
             progress_val.innerHTML = Math.ceil(progress.value / 2) + '%';
 
-            var delta;
+            var speed = 0.015, delta;
             if (clothesStep !== 0) {
-              if (clothesStep < 0.015) {
-                delta = 0.015 - clothesStep;
+              if (clothesStep < speed) {
+                delta = speed - clothesStep;
                 clothesStep = 0;
                 pantsStep -= delta;
                 clothes.style.opacity = '0';
-                pants.style.opacity = pantsStep + '';
+                pants.style.opacity = pantsStep;
               } else {
-                clothesStep -= 0.015;
-                clothes.style.opacity = clothesStep + '';
+                clothesStep -= speed;
+                clothes.style.opacity = clothesStep;
               }
             }
 
             if (clothesStep == 0 && pantsStep !== 0) {
-              if (pantsStep < 0.015 ) {
-                delta = 0.015 - pantsStep;
+              if (pantsStep < speed ) {
+                delta = speed - pantsStep;
                 pantsStep = 0;
                 underwearStep -= delta;
                 pants.style.opacity = '0';
-                underwear.style.opacity = underwearStep + '';
+                underwear.style.opacity = underwearStep;
               } else {
-                pantsStep -= 0.015;
-                pants.style.opacity = pantsStep + '';
+                pantsStep -= speed;
+                pants.style.opacity = pantsStep;
               }
             }
 
             if (pantsStep == 0 && underwearStep !== 0) {
-              if (underwearStep < 0.015) {
+              if (underwearStep < speed) {
                 underwear.style.opacity = '0';
                 underwearStep = 0;
               } else if (underwearStep > 0){
-                underwearStep -= 0.015;
-                underwear.style.opacity = underwearStep + '';
+                underwearStep -= speed;
+                underwear.style.opacity = underwearStep;
               }
             }
-          })
+          });
+          socket.on('game over', function(users){
+            if (gameover) return;
+            gameover = true;
+            var dom = '', user;
+            for (var i = 0;i < 3;i++) {
+              var user = users[i];
+              if (user) {
+                dom += ('<li><span>' + user.name + '</span></li>');
+              }
+            }
+            list.innerHTML = dom;
+            dialog.style.display = 'block';
+          });
         }
       });
 
-      var btn = document.getElementById('btn');
+
       btn.addEventListener('click', function(e){
         e.stopPropagation();
         socket.emit('game start');
+      }, false);
+      lu_btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        error.style.display = 'none';
+        rank.style.display = 'block';
       }, false);
