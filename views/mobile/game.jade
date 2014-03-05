@@ -10,7 +10,7 @@ html
     script(type="text/javascript", src="../js/socket.io.min.js")
   body
     main
-      .wait
+      .wait(style= flag ? "display:none" : "display:block")
         header
           h3
             strong #{name}
@@ -18,7 +18,7 @@ html
         p(class="wait-title") 告诉你个秘密哦，偶还没试过多 P 呢！
         div(id="message")
           <p>等待 Lu 友加入……</p>
-      .begin(style="display:none")
+      .begin(style= flag ? "display:block" : "display:none")
         header
           h3(class="user")
             strong #{name}
@@ -29,13 +29,20 @@ html
       var url = ['http://', '#{env.ip}', ':', '#{env.port}'].join('');
       var msgbox = document.getElementById('message');
       var btn = document.getElementById('btn');
+      var wait = document.querySelector('.wait');
+      var begin = document.querySelector('.begin');
       var socket = io.connect(url);
       socket.on('connection', function (data) {
         console.log('connected');
-        socket.emit('join', {name: '#{name}'});
+        socket.emit('join', {name: '#{name}', rejoin: ('#{rejoin}' === 'true')});
       });
       socket.on('message', function(data){
         msgbox.innerHTML += ("<p class='message-item'>" + data.msg + "</p>");
+      });
+      socket.on('game start', function(){
+        console.log('game start');
+        wait.style.display = 'none';
+        begin.style.display = 'block';
       });
       btn.addEventListener('click', function(e){
         e.stopPropagation();
