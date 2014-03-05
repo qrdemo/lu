@@ -14,16 +14,22 @@ body {
     font-size: 16px;
 }
 
-.btn-start {
+.btn,
+.btn-start  {
     background: #568AD8;
     border: none;
     color: #FFF !important;
     font-size: 18px;
-    letter-spacing: 2px;
-    padding: 0 12px;
+    padding: 10px 20px;
     border-radius: 5px;
+    letter-spacing: 1px;
     -webkit-appearance: none;
     appearance: none;
+}
+
+.btn-start {
+    background: #568AD8;
+    letter-spacing: 2px;
 }
 
 .btn-lagrge {

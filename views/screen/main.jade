@@ -36,6 +36,17 @@ html
           .progress-bar
             progress(id="progress" value="200" max="200")
         div.start-box
+    .dialog.over
+        h3 GAME OVER
+        .error
+           p 服务器出现了一个故障!
+           <button class="btn">谁撸的最快？</button>
+        .rank
+           ol(class="rank-list")
+              li 
+                span 撸手王子：桑老师
+              li 
+                span 最快撸手：苍老师  
     script.
       var qrcodedraw = new QRCodeLib.QRCodeDraw();
       var qrcode = document.querySelector('#qrcode');
