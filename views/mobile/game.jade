@@ -11,12 +11,18 @@ html
   body
     main
       .wait
-        h3(class="wait-title") 等待 lu 友加入
+        header
+          h3
+            strong #{name}
+            ，伦家等你好久了
+        p(class="wait-title") 告诉你个秘密哦，偶还没试过多 P 呢！
         div(id="message")
+          <p>等待 Lu 友加入……</p>
       .begin(style="display:none")
-        h3(class="user")
-          strong #{name}
-          小主，伦家是你的了
+        header
+          h3(class="user")
+            strong #{name}
+            小主，伦家是你的了
         input(type="hidden")
         button(id="btn" class="btn-submit") 开始摸我
     script.

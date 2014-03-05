@@ -7,13 +7,22 @@ html {
     background-size: cover;*/
 }
 
-.user {
-    color: #555;
+strong {
+    font-weight: normal;
+    color: #7190C7;
 }
 
-.user strong {
-    font-weight: normal;
-    color: #5C208B;
+header {
+    border-bottom: 1px solid #B4926C;
+    margin-bottom: 20px;
+}
+
+header h3 {
+    padding-bottom: 3px;
+}
+
+.user {
+    color: #555;
 }
 
 main {
@@ -31,16 +40,21 @@ main {
 #message {
     min-height:200px;
     margin: 20px auto;
+    padding: .5em 1em;
+    text-align: left;
     border: 1px solid rgba(56, 121, 31, 0.5);
     border-radius: 4px;
-    color: #CF5B36;
-    text-shadow: 1px 1px 0 rgba(250, 255, 250, 0.6);
+    color: #FFF8F5;
+    text-shadow: 0 -1px 0 rgba(100, 40, 11, 0.36);
     box-shadow: 3px 3px 10px rgba(75, 102, 139, 0.5);
 }
 
 .login-wrap {
     position: relative;
-    margin: 20px auto 0;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 20px;
     background: rgba(202, 173, 228, 0.36);
     width: 90%;
     min-width: 300px;
@@ -57,8 +71,8 @@ main {
     .login-wrap {
         position: absolute;
         top: 0;
-        left: 0;
         bottom: 10%;
+        left: 0;
         right: 0;
         margin: auto;
     }
@@ -83,18 +97,20 @@ main {
 .login-wrap h2 {
     text-align: center;
     font-size: 36px;
+    height: 50px;
+    line-height: 50px;
     color: #34495e;
-    line-height: 1.2;
     text-shadow: 1px 1px 0 rgba(155, 123, 105, 0.5);
 }
 
 .login-wrap form {
+    display: block;
     margin-top: 16px;
     text-align: center;
 }
 
  .login-wrap input {
-    width: 80%;
+    width: 85%;
     margin-bottom: 22px;
     height: 40px;
     /*line-height: 40px;*/
