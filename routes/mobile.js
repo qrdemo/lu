@@ -16,7 +16,10 @@ exports.join = function(req, res) {
   var app = req.app;
   var flag = app.get('game start');
   var name = S.trim(req.body.user);
-  if ('' !== name) {
+  var users = app.get('users');
+  if (users[name]) {
+    res.render('mobile/register', {error: '名字已经被抢啦！'});
+  } else if ('' !== name) {
     var user = lu.addUser(name);
     res.render('mobile/game', {name: user.name, rejoin: user.rejoin, env: env, flag: flag});
   } else {

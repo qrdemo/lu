@@ -12,7 +12,7 @@ html
       h2 Lu
       form(method="post", action="/mobile")
         .form-row
-           label(for="form-user" class="form-tips") 名字已经被抢啦！
-           input(type="text",id="form-user" name="user", placeholder="撸主请输入大名")
+           label(class="form-tips" style="display:block") #{error}
+           input(type="text",id="form-user" name="user" placeholder="撸主请输入大名")
         .form-row
           input(type="submit", class="btn btn-start" value="开始撸")
