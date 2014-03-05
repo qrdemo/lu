@@ -44,21 +44,6 @@ html
            <button id="lu-btn" class="btn">谁撸的最快？</button>
         .rank(style="display:none;")
           ol(class="")
-            li(class="rank-list")
-                .bd
-                  p(class="title") （最快撸手）
-                  p(class="user") 桑老师
-                p(class="num") 1
-            li(class="rank-list")
-                .bd
-                  p(class="title") （撸撸王子）
-                  p(class="user") 苍老师
-                p(class="num") 2
-            li(class="rank-list")
-                .bd
-                  p(class="title") （撸撸大师）
-                  p(class="user") 思密达
-                p(class="num") 3
     script.
       var qrcodedraw = new QRCodeLib.QRCodeDraw();
       var qrcode = document.querySelector('#qrcode');
@@ -76,7 +61,7 @@ html
       var dialog = document.querySelector('.dialog');
       var rank = document.querySelector('.rank');
       var error = document.querySelector('.error');
-      var list = document.querySelector('.rank-list');
+      var list = document.querySelector('.rank ol');
       var lu_btn = document.querySelector('#lu-btn');
       var btn = document.getElementById('btn');
 
@@ -137,11 +122,15 @@ html
           socket.on('game over', function(users){
             if (gameover) return;
             gameover = true;
-            var dom = '', user;
-            for (var i = 0;i < 3;i++) {
-              var user = users[i];
+            var dom = '', user, titles = ['', '（最快撸手）', '（撸撸王子）', '（撸撸大师）'];
+            for (var i = 1;i <= 3;i++) {
+              var user = users[i - 1];
               if (user) {
-                dom += ('<li><span>' + user.name + '</span></li>');
+                dom += ('<li class="rank-list"><div class="bd">'
+                        + '<p class="title">' + titles[i] + '</p>'
+                        + '<p class="user">' + user.name + '</p>'
+                        + '<p class="click">' + user.click + '</p>'
+                        + '</div><p class="num">' + i + '</p></li>');
               }
             }
             list.innerHTML = dom;
