@@ -189,7 +189,7 @@ main .title {
     align-items: flex-end;
 }
 
-.rank .rank-list1 {
+.rank .rank-list:nth-child(1) {
     -webkit-box-ordinal-group: 3;
     -moz-box-ordinal-group: 3;
     -webkit-order: 2;
@@ -198,11 +198,11 @@ main .title {
     height: 120px;
 }
 
-.rank .rank-list2 {
+.rank .rank-list:nth-child(2) {
     height: 80px;
 }
 
-.rank .rank-list3 {
+.rank .rank-list:nth-child(3) {
     -webkit-box-ordinal-group: 4;
     -moz-box-ordinal-group: 4;
     -webkit-order: 3;
@@ -243,11 +243,11 @@ main .title {
     color: #fff;
 }
 
-.rank .rank-list1 .num {
+.rank .rank-list:nth-child(1) .num {
     font-size: 60px;
     margin-top: 10px;
 }
 
-.rank .rank-list3 .num  {
+.rank .rank-list:nth-child(3) .num  {
     margin-top: -15px;
 }
