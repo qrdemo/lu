@@ -15,13 +15,12 @@ body {
 }
 
 .btn-submit {
-    background: #3A7BDB;
+    background: #568AD8;
     border: none;
     color: #FFF !important;
-    font-size: 18px;
+    font-size: 32px;
     letter-spacing: 2px;
-    padding: 0 12px;
-    height: 40px;
+    padding: 22px 12px;
     border-radius: 5px;
     -webkit-appearance: none;
     appearance: none;

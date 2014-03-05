@@ -10,6 +10,11 @@ main {
     text-align: center;
 }
 
+main .title {
+    color: #396B8B;
+    margin-top: 20px;
+}
+
 #qrcode {
     display: block;
     width: 230px;
