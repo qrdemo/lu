@@ -2,9 +2,9 @@ html {
     height: 100%;
     background-color: #252326;
     background: url('http://www.w3cplus.com/demo/css3/beautifulLoginForm/bg.jpg') center center no-repeat;
-    -webkit-background-size: cover;
+/*    -webkit-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size: cover;*/
 }
 
 .user {
@@ -25,11 +25,11 @@ main {
     width: 100%;
     padding: 12px 0;
     height: auto;
+    margin-top: 50px;
 }
 
 #message {
-    width:200px;
-    height:200px;
+    min-height:200px;
     margin: 20px auto;
     border: 1px solid rgba(56, 121, 31, 0.5);
     border-radius: 4px;

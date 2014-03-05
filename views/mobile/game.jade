@@ -10,12 +10,15 @@ html
     script(type="text/javascript", src="../js/socket.io.min.js")
   body
     main
-      h3(class="user")
-        strong #{name}
-        小主，伦家是你的了
-      input(type="hidden")
-      button(id="btn" class="btn-submit") 开始摸我
-      div(id="message")
+      .wait
+        h3(class="wait-title") 等待 lu 友加入
+        div(id="message")
+      .begin(style="display:none")
+        h3(class="user")
+          strong #{name}
+          小主，伦家是你的了
+        input(type="hidden")
+        button(id="btn" class="btn-submit") 开始摸我
     script.
       var url = ['http://', '#{env.ip}', ':', '#{env.port}'].join('');
       var msgbox = document.getElementById('message');
