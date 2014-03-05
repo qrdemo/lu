@@ -42,11 +42,22 @@ html
            p 服务器出现了一个故障!
            <button class="btn">谁撸的最快？</button>
         .rank
-           ol(class="rank-list")
-              li 
-                span 撸手王子：桑老师
-              li 
-                span 最快撸手：苍老师  
+          ol(class="")
+            li(class="rank-list1")
+                .bd
+                  p(class="title") （最快撸手）
+                  p(class="user") 桑老师
+                p(class="num") 1
+            li(class="rank-list2")
+                .bd
+                  p(class="title") （撸撸王子）
+                  p(class="user") 苍老师
+                p(class="num") 2
+            li(class="rank-list3")
+                .bd
+                  p(class="title") （撸撸大师）
+                  p(class="user") 思密达
+                p(class="num") 3
     script.
       var qrcodedraw = new QRCodeLib.QRCodeDraw();
       var qrcode = document.querySelector('#qrcode');
