@@ -10,10 +10,10 @@ html
     script(type="text/javascript", src="../js/socket.io.min.js")
   body
     main
-      .wait
+      .wait(style= flag ? "display:none" : "display:block")
         h3(class="wait-title") 等待 lu 友加入
         div(id="message")
-      .begin(style="display:none")
+      .begin(style= flag ? "display:block" : "display:none")
         h3(class="user")
           strong #{name}
           小主，伦家是你的了
@@ -23,13 +23,20 @@ html
       var url = ['http://', '#{env.ip}', ':', '#{env.port}'].join('');
       var msgbox = document.getElementById('message');
       var btn = document.getElementById('btn');
+      var wait = document.querySelector('.wait');
+      var begin = document.querySelector('.begin');
       var socket = io.connect(url);
       socket.on('connection', function (data) {
         console.log('connected');
-        socket.emit('join', {name: '#{name}'});
+        socket.emit('join', {name: '#{name}', rejoin: ('#{rejoin}' === 'true')});
       });
       socket.on('message', function(data){
         msgbox.innerHTML += ("<p class='message-item'>" + data.msg + "</p>");
+      });
+      socket.on('game start', function(){
+        console.log('game start');
+        wait.style.display = 'none';
+        begin.style.display = 'block';
       });
       btn.addEventListener('click', function(e){
         e.stopPropagation();

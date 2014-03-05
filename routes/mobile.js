@@ -14,11 +14,11 @@ exports.register = function(req, res) {
 
 exports.join = function(req, res) {
   var app = req.app;
-  var users = app.get('users');
-  var user = S.trim(req.body.user);
-  if ('' !== user) {
-    lu.addUser(user);
-    res.render('mobile/game', {name: user, env: env});
+  var flag = app.get('game start');
+  var name = S.trim(req.body.user);
+  if ('' !== name) {
+    var user = lu.addUser(name);
+    res.render('mobile/game', {name: user.name, rejoin: user.rejoin, env: env, flag: flag});
   } else {
     res.render('mobile/register', {
       error: '用户名不能为空！'
