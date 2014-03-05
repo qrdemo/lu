@@ -8,6 +8,7 @@ html
     link(rel="stylesheet", href="../css/base.css")
     link(rel="stylesheet", href="../css/mobile.css")
     script(type="text/javascript", src="../js/socket.io.min.js")
+    script(type="text/javascript", src="../js/fastclick.js")
   body
     main
       .wait(style= flag ? "display:none" : "display:block")
@@ -21,14 +22,14 @@ html
       .begin(style= flag ? "display:block" : "display:none")
         header
           h3(class="user")
-            strong #{name} 
+            strong #{name}
             主人，伦家是你的了(^o^)
         input(type="hidden")
         button(id="btn" class="btn-start btn-lagrge") 开始摸我
     script.
       var url = ['http://', '#{env.ip}', ':', '#{env.port}'].join('');
-      var msgbox = document.getElementById('message');
-      var btn = document.getElementById('btn');
+      var msgbox = document.querySelector('#message');
+      var btn = document.querySelector('#btn');
       var wait = document.querySelector('.wait');
       var begin = document.querySelector('.begin');
       var socket = io.connect(url);
@@ -44,7 +45,13 @@ html
         wait.style.display = 'none';
         begin.style.display = 'block';
       });
-      btn.addEventListener('click', function(e){
-        e.stopPropagation();
-        socket.emit('click', {name: '#{name}'});
+
+      window.addEventListener('load', function(e){
+        FastClick.attach(btn);
+
+        btn.addEventListener('click', function(e){
+          e.stopPropagation();
+          socket.emit('click', {name: '#{name}'});
+        }, false);
       }, false);
+
