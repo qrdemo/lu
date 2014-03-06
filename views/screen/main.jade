@@ -40,7 +40,7 @@ html
     .dialog.over(style="display:none")
         h3 Game Over
         .error
-           p 
+           p
              img(src="../img/no.gif")
              服务器君被你们玩坏啦!
            <button id="lu-btn" class="btn">看谁撸的最快？</button>
@@ -49,6 +49,7 @@ html
     script.
       var qrcodedraw = new QRCodeLib.QRCodeDraw();
       var qrcode = document.querySelector('#qrcode');
+      var main = document.querySelector('main');
       var progress = document.querySelector('#progress');
       var progress_val = document.querySelector('.progress-value');
       var underwear = document.querySelector('.icon-underwear');
@@ -82,6 +83,10 @@ html
             if (progress.value <= left) {
               socket.emit('game over');
               return;
+            }
+            if (progress.value <= max * 0.5) {
+              if (!~main.className.indexOf('half'))
+                main.className += ' half';
             }
             progress.value = --progress.value;
             progress_val.innerHTML = Math.ceil((progress.value / max) * 100) + '%';
