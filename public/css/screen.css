@@ -95,15 +95,23 @@ main .title {
 }
 
 .progress-box {
-    margin: 20px auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
     text-align: center;
     position: relative;
     z-index: 9;
 }
 .progress-box .progress-value {
+    display: inline-block;
+    width: 3em;
     padding: 0px 5px;
     color: #555;
-    font-size: 32px;
+    font-size: 50px;
+    line-height: 1.2;
+    vertical-align: -10px;
+    color: #3C8A1F;
+    font-family: Constantia, Georgia;
 }
 
 /**
