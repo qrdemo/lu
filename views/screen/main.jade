@@ -123,6 +123,9 @@ html
           });
 
           socket.on('game start', function(data){
+            // hide qrcode
+            qrcode.style.visibility = 'hidden';
+
             var totalCount = data.totalCount || 1;
             max = totalCount * 100;
             left = max * left_persent;
