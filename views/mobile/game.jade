@@ -16,7 +16,6 @@ html
           h3
             strong #{name}
             ，伦家等你好久了
-        p(class="wait-title") 告诉你个秘密哦，偶还没试过多 P 呢！
         div(id="message")
           <p>等待 Lu 友加入……</p>
       .begin(style= flag ? "display:block" : "display:none")
@@ -25,7 +24,10 @@ html
             strong #{name}
             主人，伦家是你的了(^o^)
         input(type="hidden")
-        button(id="btn" class="btn-start btn-lagrge") 开始摸我
+        p 开始摸我
+        a(id="btn" class="" href="javascript:;")
+            img(src="../img/mm.gif", alt="")
+
     script.
       var url = ['http://', '#{env.ip}', ':', '#{env.port}'].join('');
       var msgbox = document.querySelector('#message');

@@ -241,6 +241,10 @@ main .title {
     color: #962532;
 }
 
+.rank .bd p {
+    line-height: 1.5;
+}
+
 .rank .user {
     font-size: 32px;
     color: #D52626;
@@ -254,13 +258,13 @@ main .title {
 
 .rank .rank-list:nth-child(1) .num {
     font-size: 60px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .rank .rank-list:nth-child(2) .num {
-    margin-top: 25px;
+    margin-top: 10px;
 }
 
 .rank .rank-list:nth-child(3) .num  {
-    margin-top: 15px;
+    margin-top: 0;
 }

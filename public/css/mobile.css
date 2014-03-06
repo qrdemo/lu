@@ -10,9 +10,6 @@ html {
 strong {
     font-weight: normal;
     color: #7190C7;
-    width: -webkit-calc(100%-30px);
-    width: -moz-calc(100%-30px);
-    width: calc(100%-30px);
 }
 
 header {
@@ -22,6 +19,11 @@ header {
 
 header h3 {
     padding-bottom: 3px;
+}
+
+.begin p {
+    color: #FFECE6;
+    font-size: 36px;
 }
 
 .user {
@@ -34,9 +36,34 @@ main {
 }
 
 #btn {
+    display: block;
     width: 100%;
     height: auto;
-    margin-top: 50px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+#btn img {
+    position: relative;
+    display: inline-block;
+    color: #F1F1F1;
+    outline: none;
+    text-shadow: -1px -1px 0 rgba(26, 26, 26, 0.5);
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: inset 0 -1px 1px #E2C095, 0 8px 0 #A36A3D, 0 10px 15px rgba(0, 0, 0, 0.35);
+    box-shadow: inset 0 -1px 1px #E2C095, 0 8px 0 #A36A3D, 0 10px 15px rgba(0, 0, 0, 0.35);
+    -moz-transition: all .05s ease-in-out;
+    -o-transition: all .05s ease-in-out;
+    -webkit-transition: all .05s ease-in-out;
+    transition: all .05s ease-in-out;
+    text-decoration: none;
+}
+
+#btn:active img {
+    top: 4px;
+    -webkit-box-shadow: inset 0 -1px 1px #E5BB93, 0 5px 0 #D1996D, 0 6px 8px rgba(0, 0, 0, 0.35);
+    box-shadow: inset 0 -1px 1px #E5BB93, 0 5px 0 #D1996D, 0 6px 8px rgba(0, 0, 0, 0.35);
 }
 
 #message {
