@@ -47,11 +47,16 @@ html
       });
 
       window.addEventListener('load', function(e){
+        // remove 300ms delay on mobile
         FastClick.attach(btn);
 
+        // bind `start game` click handler
         btn.addEventListener('click', function(e){
           e.stopPropagation();
           socket.emit('click', {name: '#{name}'});
         }, false);
       }, false);
+
+      // add `:active` support
+      document.addEventListener('touchstart', function(){}, false);
 
