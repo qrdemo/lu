@@ -47,6 +47,11 @@ html
         wait.style.display = 'none';
         begin.style.display = 'block';
       });
+      socket.on('game restart', function(){
+        console.log('game restart');
+        wait.style.display = 'block';
+        begin.style.display = 'none';
+      });
 
       window.addEventListener('load', function(e){
         // remove 300ms delay on mobile
