@@ -10,6 +10,8 @@ module.exports = function(app) {
   app.get('/mobile', mobile.register);
   app.post('/mobile', mobile.join);
 
+  app.get('/mobile/control', mobile.control);
+
   // env
   app.get('/env', env.get);
 };
