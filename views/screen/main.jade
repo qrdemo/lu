@@ -15,7 +15,7 @@ html
       .progress-box
         .progress-bar
           progress(id="progress" value="200" max="200")
-        div(class="progress-value") 100%  
+        div(class="progress-value") 100%
       div(class="game-box")
         div.start-box
           canvas(id="qrcode")
@@ -149,3 +149,6 @@ html
         error.style.display = 'none';
         rank.style.display = 'block';
       }, false);
+
+      // 添加:active伪类
+      document.addEventListener('touchstart', function(){}, false);
