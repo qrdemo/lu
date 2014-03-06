@@ -28,3 +28,7 @@ exports.join = function(req, res) {
     });
   }
 };
+
+exports.control = function(req, res){
+  res.render('mobile/control', {env: env});
+};

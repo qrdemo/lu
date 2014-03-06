@@ -14,3 +14,20 @@ html
       .control-box
          <div class="paginate left"><i></i><i></i></div>
          <div class="paginate right"><i></i><i></i></div>
+    script.
+      var url = ['http://', '#{env.ip}', ':', '#{env.port}'].join('');
+      var socket = io.connect(url);
+      var left = document.querySelector('.control-box .left');
+      var right = document.querySelector('.control-box .right');
+
+      left.addEventListener('click', function(e){
+        e.stopPropagation();
+        console.log(socket)
+        socket.emit('ppt left');
+      }, false);
+
+      right.addEventListener('click', function(e){
+        e.stopPropagation();
+        socket.emit('ppt right');
+      }, false);
+
