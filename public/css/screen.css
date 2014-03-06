@@ -1,9 +1,8 @@
 
 html{
 /*    background: url(../img/bg-r.png) left 0 no-repeat,
-                url(../img/bg-l.png) right 0 no-repeat #fff;/* 背景色始终写到最后 */
-    
-
+                url(../img/bg-l.png) right 0 no-repeat #fff; 
+    */
 }
 main {
     width: 990px;
