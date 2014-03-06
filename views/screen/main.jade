@@ -52,18 +52,20 @@ html
       var underwear = document.querySelector('.icon-underwear');
       var clothes = document.querySelector('.icon-clothes');
       var pants = document.querySelector('.icon-pants');
+      var dialog = document.querySelector('.dialog');
+      var rank = document.querySelector('.rank');
+      var error = document.querySelector('.error');
+      var list = document.querySelector('.rank ol');
+      var lu_btn = document.querySelector('#lu-btn');
+      var btn = document.querySelector('#btn');
       var clothesStep = 1, pantsStep = 1, underwearStep = 1;
       var ip = '#{ip}';
       var port = '#{port}';
       var game = ['http://', ip, ':', port, '/mobile'].join('');
       var socket;
       var gameover = false;
-      var dialog = document.querySelector('.dialog');
-      var rank = document.querySelector('.rank');
-      var error = document.querySelector('.error');
-      var list = document.querySelector('.rank ol');
-      var lu_btn = document.querySelector('#lu-btn');
-      var btn = document.getElementById('btn');
+      var max = progress.getAttribute('max');
+      var left_persent = 0.1, left = 20, leftOpa = 0.5, opaSpeed;
 
       qrcodedraw.draw(qrcode, game, function(err, canvas){
         if(err){
@@ -75,14 +77,14 @@ html
             socket.emit('screen');
           });
           socket.on('click', function(data){
-            if (progress.value == 0) {
+            if (progress.value <= left) {
               socket.emit('game over');
               return;
             }
             progress.value = --progress.value;
-            progress_val.innerHTML = Math.ceil(progress.value / 2) + '%';
+            progress_val.innerHTML = Math.ceil((progress.value / max) * 100) + '%';
 
-            var speed = 0.015, delta;
+            var speed = opaSpeed, delta;
             if (clothesStep !== 0) {
               if (clothesStep < speed) {
                 delta = speed - clothesStep;
@@ -119,6 +121,17 @@ html
               }
             }
           });
+
+          socket.on('game start', function(data){
+            var totalCount = data.totalCount || 1;
+            max = totalCount * 100;
+            left = max * left_persent;
+            opaSpeed = parseFloat(((3 - leftOpa)/(max - left)).toFixed(3));
+            progress.value = max;
+            progress.setAttribute('max', max);
+            progress_val.innerHTML = '100%';
+          });
+
           socket.on('game over', function(users){
             if (gameover) return;
             gameover = true;
