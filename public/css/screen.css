@@ -1,9 +1,9 @@
 
 html{
-    background: url(../img/bg.jpg) 50% 0% no-repeat;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; /* 等比缩放到完全覆盖容器，背景图像有可能超出容器 */
+/*    background: url(../img/bg-r.png) left 0 no-repeat,
+                url(../img/bg-l.png) right 0 no-repeat #fff;/* 背景色始终写到最后 */
+    
+
 }
 main {
     width: 990px;
@@ -31,8 +31,10 @@ main .title {
     height: 600px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-bottom: 30px;
+    background: url(../img/bg.png) 0 0 no-repeat;
+    background-size: contain;
 }
 
 .game-canvas {
@@ -72,7 +74,18 @@ main .title {
     border-radius: 18px;
 }
 .progress-bar progress::-webkit-progress-value {
-    background: #D85757;
+    background: -o-linear-gradient(top,  #5ACE56 0%,#3E8B3B 100%);
+    background: -moz-linear-gradient(top, #5ACE56 0%, #3E8B3B 100%);
+    background: -webkit-gradient(linear, left top, left bottom, from(#5ACE56), to(#3E8B3B));
+    background: -webkit-linear-gradient(top, #5ACE56 0%, #3E8B3B 100%);
+    background: linear-gradient(to bottom,  #5ACE56 0%, #3E8B3B 100%);
+    -webkit-border-radius: 18px;
+    border-radius: 18px;
+}
+
+/* 游戏到一半 */
+
+.half .progress-bar progress::-webkit-progress-value {
     background: -moz-linear-gradient(top,  #D85757 0%, #CF2237 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#D85757), color-stop(100%,#CF2237));
     background: -webkit-linear-gradient(top,  #D85757 0%,#CF2237 100%);
@@ -80,18 +93,10 @@ main .title {
     background: -webkit-gradient(linear, left top, left bottom, from(#D85757), to(#CF2237));
     background: -webkit-linear-gradient(top, #D85757 0%, #CF2237 100%);
     background: linear-gradient(to bottom, #D85757 0%,#CF2237 100%);
-    -webkit-border-radius: 18px;
-    border-radius: 18px;
 }
-.progress-bar progress::-moz-progress-bar {
-    background: #D85757;
-    background: -moz-linear-gradient(top,  #D85757 0%, #CF2237 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#D85757), color-stop(100%,#CF2237));
-    background: -webkit-linear-gradient(top,  #D85757 0%,#CF2237 100%);
-    background: -o-linear-gradient(top,  #D85757 0%,#CF2237 100%);
-    background: -moz-linear-gradient(top, #D85757 0%, #CF2237 100%);
-    background: linear-gradient(to bottom,  #D85757 0%,#CF2237 100%);
-    border-radius: 18px;
+
+.half .progress-box .progress-value {
+    color: #DF5B31;
 }
 
 .progress-box {
@@ -130,7 +135,7 @@ main .title {
 .lulu {
     height: 100%;
     width: 100%;
-    text-indent: -220px;
+    text-indent: -168px;
     /*background: url(../img/lulu-bg.png) 50% 0 no-repeat;*/
 }
 
@@ -158,6 +163,7 @@ main .title {
     
     padding: 20px 60px 50px 60px;
     border: 5px solid #96532F;
+    -webkit-border-radius: 9px;
     border-radius: 9px;
     background-color: #ffec6b;
     text-align: center;
@@ -267,4 +273,8 @@ main .title {
 
 .rank .rank-list:nth-child(3) .num  {
     margin-top: 0;
+}
+
+.error p img{
+    vertical-align: middle;
 }
