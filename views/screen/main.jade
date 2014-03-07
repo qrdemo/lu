@@ -19,7 +19,7 @@ html
       div(class="game-box")
         div.start-box
           canvas(id="qrcode")
-          input(id="btn", class="btn-start" type="button", value="开始游戏")
+          input(id="btn", class="btn-start" type="button", value="")
         div(id="J_game_canvas" class="game-canvas")
             .lulu
                 .icon-body
@@ -35,15 +35,13 @@ html
                 .icon-clothes
                 <!-- 裤子 -->
                 .icon-pants
-
-        div.start-box
     .dialog.over(style="display:none")
         h3 Game Over
         .error
            p
              img(src="../img/no.gif")
              服务器君被你们玩坏啦!
-           <button id="" class="btn">继续撸？</button>
+           <button class="btn">继续撸？</button>
            <button id="lu-btn" class="btn">看谁撸的最快？</button>
         .rank(style="display:none;")
           ol(class="")

@@ -1,8 +1,8 @@
 
 html{
-/*    background: url(../img/bg-r.png) left 0 no-repeat,
+    background: url(../img/bg-r.png) left 0 no-repeat,
                 url(../img/bg-l.png) right 0 no-repeat #fff; 
-    */
+    
 }
 main {
     width: 990px;
@@ -18,7 +18,7 @@ main .title {
 
 #qrcode {
     display: block;
-    width: 230px;
+    width: 300px;
     -webkit-border-radius: 9px;
     border-radius: 9px;
     margin-bottom: 5px;
@@ -33,6 +33,8 @@ main .title {
     margin-top: 10px;
     margin-bottom: 30px;
     background: url(../img/bg.png) 0 0 no-repeat;
+    -webkit-background-size: contain;
+    -o-background-size: contain;
     background-size: contain;
 }
 
@@ -121,12 +123,35 @@ main .title {
 /**
  * 开始按钮
  */
- .start-box {
+.start-box {
     position: absolute;
-    top: -15px;
-    right: 55px;
+    top: 50px;
+    left: 130px;
     z-index: 99;
+    background-color: #d40005;
+    padding: 10px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
  }
+
+.start-box:after {
+     /*content: "";*/
+     position: fixed;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background-color: #999;
+ }
+
+.start-box .btn-start {
+    width: 100%;
+    height: 120px;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    margin-top: 10px;
+    background: url(../img/btn-start.png) 50% 50% no-repeat;  
+}
 
 /* --------------------------------------------------------------------------
    lulu 美女
