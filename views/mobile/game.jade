@@ -40,7 +40,9 @@ html
         socket.emit('join', {name: '#{name}', rejoin: ('#{rejoin}' === 'true')});
       });
       socket.on('message', function(data){
-        msgbox.innerHTML += ("<p class='message-item'>" + data.msg + "</p>");
+        var item  = document.querySelector('.message-item');
+        if (!item) msgbox.innerHTML = '';
+        msgbox.innerHTML = ("<p class='message-item'>" + data.msg + "</p>") + msgbox.innerHTML;
       });
       socket.on('game start', function(){
         console.log('game start');
