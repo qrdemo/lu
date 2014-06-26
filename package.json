@@ -10,5 +10,8 @@
     "jade": "*",
     "socket.io": "0.9.16",
     "kissy": "~1.4.2-1"
+  },
+  "devDependencies": {
+    "node-dev": "^2.3.0"
   }
 }
