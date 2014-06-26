@@ -9,6 +9,7 @@ html
     link(rel="stylesheet", href="../css/screen.css")
     script(type="text/javascript", src="../js/socket.io.min.js")
     script(type="text/javascript", src="../js/qrcode.min.js")
+    script(type="text/javascript", src="../js/caculate.js")
   body
     main
       h1(class="title") 一起撸一撸
@@ -93,26 +94,26 @@ html
             var speed = opaSpeed, delta;
             if (clothesStep !== 0) {
               if (clothesStep < speed) {
-                delta = speed - clothesStep;
+                delta = sub(speed, clothesStep);
                 clothesStep = 0;
-                pantsStep -= delta;
+                pantsStep = sub(pantsStep, delta);
                 clothes.style.opacity = '0';
                 pants.style.opacity = pantsStep;
               } else {
-                clothesStep -= speed;
+                clothesStep = sub(clothesStep, speed);
                 clothes.style.opacity = clothesStep;
               }
             }
 
             if (clothesStep == 0 && pantsStep !== 0) {
               if (pantsStep < speed ) {
-                delta = speed - pantsStep;
+                delta = sub(speed, pantsStep);
                 pantsStep = 0;
-                underwearStep -= delta;
+                underwearStep = sub(underwearStep, delta);
                 pants.style.opacity = '0';
                 underwear.style.opacity = underwearStep;
               } else {
-                pantsStep -= speed;
+                pantsStep = sub(pantsStep, speed);
                 pants.style.opacity = pantsStep;
               }
             }
@@ -122,7 +123,7 @@ html
                 underwear.style.opacity = '0';
                 underwearStep = 0;
               } else if (underwearStep > 0){
-                underwearStep -= speed;
+                underwearStep = sub(underwearStep, speed);
                 underwear.style.opacity = underwearStep;
               }
             }
@@ -134,9 +135,9 @@ html
             startBox.style.visibility = 'hidden';
 
             var totalCount = data.totalCount || 1;
-            max = totalCount * 100;
-            left = max * left_persent;
-            opaSpeed = parseFloat(((3 - leftOpa)/(max - left)).toFixed(3));
+            max = mul(totalCount, 100);
+            left = mul(max, left_persent);
+            opaSpeed = div(sub(3, leftOpa), sub(max, left));
             progress.value = max;
             progress.setAttribute('max', max);
             progress_val.innerHTML = '100%';
