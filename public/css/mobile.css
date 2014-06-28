@@ -42,10 +42,12 @@ main {
     cursor: pointer;
 }
 
-#btn img {
+#btn {
     position: relative;
     display: inline-block;
+    padding: 30px -0;
     color: #F1F1F1;
+    font-size: 32px;
     outline: none;
     text-shadow: -1px -1px 0 rgba(26, 26, 26, 0.5);
     -webkit-border-radius: 6px;
@@ -57,9 +59,10 @@ main {
     -webkit-transition: all .05s ease-in-out;
     transition: all .05s ease-in-out;
     text-decoration: none;
+    background-color: #B17326;
 }
 
-#btn:active img {
+#btn:active {
     top: 4px;
     -webkit-box-shadow: inset 0 -1px 1px #E5BB93, 0 5px 0 #D1996D, 0 6px 8px rgba(0, 0, 0, 0.35);
     box-shadow: inset 0 -1px 1px #E5BB93, 0 5px 0 #D1996D, 0 6px 8px rgba(0, 0, 0, 0.35);
